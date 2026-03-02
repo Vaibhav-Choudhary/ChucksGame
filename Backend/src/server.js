@@ -1,11 +1,9 @@
-const express = require("express")
+require("dotenv").config(); // Load environment variables
 
-const app = express()
+const app = require("./app");
 
-app.get("/test", (req,res)=>{
-    res.send("Hello from the backend!")
-})
+const PORT = process.env.PORT || 5000;
 
-app.listen(5000, () => {
-  console.log("Server started on port 5000");
+app.listen(PORT, () => {
+  console.log(`🚀 Server started on port ${PORT}`);
 });
